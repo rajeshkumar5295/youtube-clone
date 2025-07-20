@@ -1,70 +1,143 @@
-# Getting Started with Create React App
+# YouTube Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern YouTube clone built with React, Firebase, and Tailwind CSS.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### 🎥 Video Upload
+- **Secure Authentication**: Google Sign-in required for video uploads
+- **File Validation**: Supports MP4, AVI, MOV files up to 100MB
+- **Progress Tracking**: Real-time upload progress with visual feedback
+- **Firebase Storage**: Videos stored securely in Firebase Storage
+- **Metadata Storage**: Video information stored in Firestore database
 
-### `npm start`
+### 🎬 Video Features
+- **YouTube API Integration**: Browse and watch videos from YouTube
+- **Search Functionality**: Search for videos with instant results
+- **Video Player**: Embedded YouTube video player
+- **Comments System**: Add and view comments on videos
+- **Related Videos**: Discover related content
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 👤 User Profile
+- **Personal Dashboard**: View profile information and activity
+- **Upload Management**: See all your uploaded videos
+- **Settings**: Manage account preferences
+- **Activity Tracking**: Monitor video watching and upload history
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🎨 UI/UX
+- **Dark/Light Mode**: Toggle between themes
+- **Responsive Design**: Works on desktop, tablet, and mobile
+- **Modern Interface**: Clean, YouTube-inspired design
+- **Loading States**: Smooth loading animations and skeletons
+- **Infinite Scroll**: Load more videos as you scroll
 
-### `npm test`
+### 🔧 Technical Features
+- **React 18**: Latest React features and hooks
+- **Firebase Integration**: Authentication, Storage, and Firestore
+- **Tailwind CSS**: Utility-first CSS framework
+- **React Router**: Client-side routing
+- **Context API**: Global state management
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+- Firebase account
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd youtubeclone
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies:
+```bash
+npm install
+```
 
-### `npm run eject`
+3. Set up Firebase:
+   - Create a Firebase project
+   - Enable Authentication (Google provider)
+   - Enable Storage
+   - Enable Firestore
+   - Update `src/firebase/config.js` with your Firebase config
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Start the development server:
+```bash
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Uploading Videos
+1. Sign in with your Google account
+2. Click the video upload icon in the header
+3. Fill in video title and description
+4. Select a video file (MP4, AVI, MOV up to 100MB)
+5. Click "Upload Video" and wait for completion
 
-## Learn More
+### Browsing Videos
+1. Use the left navigation to browse categories
+2. Search for specific videos using the search bar
+3. Click on any video to watch it
+4. Add comments and interact with content
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Profile Management
+1. Click your profile picture to access your profile
+2. View your uploaded videos
+3. Manage account settings
+4. Track your activity
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Structure
 
-### Code Splitting
+```
+src/
+├── components/          # React components
+│   ├── Feed.jsx        # Main video feed
+│   ├── Header.jsx      # Navigation header
+│   ├── Profile.jsx     # User profile page
+│   ├── UserVideos.jsx  # User's uploaded videos
+│   └── ...
+├── context/            # React context
+│   └── Context.js      # Global state management
+├── firebase/           # Firebase configuration
+│   └── config.js       # Firebase setup
+├── utils/              # Utility functions
+│   ├── api.js          # YouTube API integration
+│   └── constant.js     # App constants
+└── shared/             # Shared components
+    ├── Loader.jsx      # Loading component
+    └── Skeleton.jsx    # Skeleton loading
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Technologies Used
 
-### Analyzing the Bundle Size
+- **Frontend**: React 18, React Router, React Icons
+- **Styling**: Tailwind CSS
+- **Backend**: Firebase (Auth, Storage, Firestore)
+- **API**: YouTube Data API v3
+- **Video Player**: React Player
+- **State Management**: React Context API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contributing
 
-### Making a Progressive Web App
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
+This project is licensed under the MIT License.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Acknowledgments
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- YouTube for the API
+- Firebase for backend services
+- React and Tailwind CSS communities

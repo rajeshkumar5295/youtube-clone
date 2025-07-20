@@ -10,6 +10,15 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+body.dark-bg {
+  background-color: #111827; /* Tailwind bg-gray-900 */
+  color: #fff;
+}
+body.light-bg {
+  background-color: #f9fafb; /* Tailwind bg-gray-50 */
+  color: #111827;
+}
+
 #root {
     height: 100vh;
 }

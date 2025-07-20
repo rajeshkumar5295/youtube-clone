@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const LeftNav = () => {
     
-     const { selectCategories,setSelectCategories,mobileMenue }=useContext(Context);
+     const { selectCategories,setSelectCategories,mobileMenue, isDarkMode }=useContext(Context);
      const navigate=useNavigate();
       const clickHandler=(name,type)=>{ 
           switch(type){
@@ -24,7 +24,7 @@ const LeftNav = () => {
       }
   return (
 
-    <div  className={`bg-black w-[250px]  py-4  overflow-y-auto  md:block h-full absolute md:relative z-10 translate-x-[-250px] md:translate-x-0 transition-all ${mobileMenue && "translate-x-0"} `}   >
+    <div  className={`${isDarkMode ? 'bg-black' : 'bg-white'} w-[250px] py-4 overflow-y-auto md:block h-full absolute md:relative z-10 translate-x-[-250px] md:translate-x-0 transition-all ${mobileMenue && "translate-x-0"} border-r ${isDarkMode ? 'border-gray-800' : 'border-gray-200'}`}   >
       <div className='flex flex-col px-5 ' >
           {
             categories?.map((item,index)=>{
@@ -46,7 +46,7 @@ const LeftNav = () => {
 
                      {
                       item?.divider && (
-                        <hr className=' my-5 border-white/[0.2] '  />
+                        <hr className={`my-5 ${isDarkMode ? 'border-white/[0.2]' : 'border-gray-300'}`}  />
                       )
                      }
                      </React.Fragment>
@@ -56,8 +56,8 @@ const LeftNav = () => {
             })
           }
 
-          <hr  className=' my-5 border-white/[0.2] ' />
-          <div className='text-white /[0.5] text-[12px] ' >
+          <hr className={`my-5 ${isDarkMode ? 'border-white/[0.2]' : 'border-gray-300'}`} />
+          <div className={`text-[12px] ${isDarkMode ? 'text-white/50' : 'text-gray-500'}`} >
                RRR Group
          </div>
       </div>
